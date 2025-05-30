@@ -1,0 +1,61 @@
+@import url("../../assets/colors.css");
+
+main {
+  margin-top: 90px;
+  height: 100vh;
+  width: 100%;
+  padding: 0 10vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  background: linear-gradient(to right, #211c24, #211c24);
+
+  .detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .detail h3 {
+    color: var(--text-color);
+  }
+
+  .detail h1 {
+    font-size: 5rem;
+    color: white;
+  }
+
+  .detail h1 span {
+    font-weight: bold;
+  }
+
+  .detail p {
+    font-size: 1rem;
+    margin: 2rem 0;
+    color: var(--text-color);
+  }
+
+  .detail button {
+    padding: 1rem 2rem;
+    width: 10rem;
+    background-color: transparent;
+    color: var(--primary-bg);
+    border: 1px solid var(--text-color);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .detail button:hover {
+    background-color: var(--text-hover1);
+  }
+
+  .image {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .image img {
+    width: 100%;
+  }
+}

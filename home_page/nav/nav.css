@@ -1,10 +1,15 @@
+@import url('../../assets/init_styles.css');
+@import url('../../assets/colors.css');
+
+
+
 nav {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    background-color: #333;
-    color: white;
+    width: 100vw;
+    background-color: var(--secondary-bg);
+    color: var(--text-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,22 +17,17 @@ nav {
     z-index: 1000;
     transition: background-color 0.3s ease;
     text-decoration: none;
-
-
-
     display: flex;
     flex-direction: column;
-    gap: 10px;
+
 
     .top {
+        width: 100%;
+        background-color: var(--primary-bg);
         display: flex;
         flex-direction: row;
-        gap: 20px;
-        justify-content: center;
-        align-items: center;
-        background-color: white;
-        color: gray;
-        width: 100%;
+        justify-content: space-between;
+        padding: 10px 10vw;
 
         ul {
             display: flex;
@@ -41,21 +41,83 @@ nav {
         }
 
         .nav-links {
-            color: black;
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s ease;
 
-            &:hover {
-                color: #007bff;
+            a{
+                text-align: center;
+                color: var(--text-color);
+            }
+            a:hover{
+                color: var(--text-hover1)
             }
         }
+        .nav-icons{
+            i{
+                color: var(--text-color);
+            }
+            i:hover{
+                color: var(--text-hover1)
+            }
+        }
+        input[type="text"]{
+            border-radius: 10px;
+            padding: 10px 20px;
+            border: none;
+            background-color: var(--light-gray);
+            color: var(--text-color);
+        }
+    }
+
+    .bottom {
+        padding: 0;
+        width: 100%;
     }
 
     .bottom>ul {
         display: flex;
         flex-direction: row;
-        gap: 20px;
-        align-items: center;
+        justify-content: stretch;
+        padding: 10px 0;
+        margin: 0 10vw;
+
+        li{
+            /* border-right: 1px solid var(--gray-color); */
+            padding:  0 20px 0 0;
+            flex-grow: 1;
+            text-align: center;
+            display: flex;
+            align-items: center;
+
+            span{
+                text-align: center;
+                color: var(--text-color);
+            }
+    
+            i{
+                color: var(--text-color);
+            }
+
+            &:hover{
+                span{
+                    color: var(--green-color);
+                }
+                i{
+                    color: var(--green-color);
+                }
+            }
+        }
+
+        li::after{
+            content: "";
+            width: 1px;
+            height: 10px;
+            background-color: var(--gray-color);
+            margin: 0 20px;
+        }
+        li:last-child::after{
+            display: none;
+        }
     }
 }

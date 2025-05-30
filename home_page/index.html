@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
     <link rel="stylesheet" href="./style.css" />
 
     <link
@@ -17,85 +18,44 @@
   <body>
     <div id="nav"></div>
 
-    <nav>
-      <section class="top">
-        <img src="../assets/logo.png" alt="" />
-        <input type="text" placeholder="Search..." />
-        <ul class="nav-links">
-          <li>
-            <a href="./home_page/index.html">Home</a>
-          </li>
-          <li>
-            <a href="./about_page/index.html">About</a>
-          </li>
-          <li>
-            <a href="./contact_page/index.html">Contact Us</a>
-          </li>
-          <li>
-            <a href="./services_page/index.html">Blog</a>
-          </li>
+    <div id="cover"></div>
+
+    <div id="products"></div>
+
+    <div id="category">
+      
+    </div>
+
+    <div id="items">
+      <section class="items_section">
+        <ul class="nav_menu">
+          <li>New Arrival</li>
+          <li>Best Seller</li>
+          <li>Featured Products</li>
         </ul>
 
-        <ul class="nav-icons">
+        <ul class="items">
           <li>
-            <a href="./login_page/index.html">
-              <i class="fa-solid fa-heart"></i>
-            </a>
-          </li>
-          <li>
-            <a href="./signup_page/index.html">
-              <i class="fa-solid fa-cart-shopping"></i>
-            </a>
-          </li>
-          <li>
-            <a href="./profile_page/index.html"
-              ><i class="fa-solid fa-user"></i
-            ></a>
+            <figure>
+              <button>
+                <img src="../assets/icons/Like.png"/>
+              </button>
+              <img src="../assets/products/iphone.png" alt="" />
+              <figcaption>
+                <p>iPhone 14 Pro Max 128GB Deep Blue</p>
+                <h1>$900</h1>
+                <button>Buy Now</button>
+              </figcaption>
+            </figure>
           </li>
         </ul>
       </section>
-      <section class="bottom">
-        <!-- list of category (Phones, Computers, Smart watches, Cameras, Headphones, Gaming) (icon, name) -->
-        <ul>
-          <li>
-            <a href="./category_page/index.html">
-              <i class="fa-solid fa-mobile"></i>
-              <span>Phones</span>
-            </a>
-          </li>
-          <li>
-            <a href="./category_page/index.html">
-              <i class="fa-solid fa-laptop"></i>
-              <span>Computers</span>
-            </a>
-          </li>
-          <li>
-            <a href="./category_page/index.html">
-              <i class="fa-solid fa-watch"></i>
-              <span>Smart Watches</span>
-            </a>
-          </li>
-          <li>
-            <a href="./category_page/index.html">
-              <i class="fa-solid fa-camera"></i>
-              <span>Cameras</span>
-            </a>
-          </li>
-          <li>
-            <a href="./category_page/index.html">
-              <i class="fa-solid fa-headphones"></i>
-              <span>Headphones</span>
-            </a>
-          </li>
-          <li>
-            <a href="./category_page/index.html">
-              <i class="fa-solid fa-gamepad"></i>
-              <span>Gaming</span>
-            </a>
-          </li>
-        </ul>
-      </section>
-    </nav>
-    <script src="./nav.js"></script>
+    </div>
+
+    <script src="./nav/nav.js"></script>
+    <script src="./main/main.js"></script>
+    <script src="./products/products.js"></script>
+    <script src="./category/category.js"></script>
+    <script src="./items/items.js"></script>
   </body>
 </html>

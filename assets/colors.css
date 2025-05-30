@@ -1,0 +1,17 @@
+
+/* set colors variables */
+
+:root{
+    --primary-bg: white;
+    --secondary-bg: #333;
+    --text-color: gray;
+    --text-hover1: black;
+    --text-hover2: #007bff;
+    --gray-color: gray;
+    --black-color: black;
+    --white-color: white;
+    --blue-color: #007bff;
+    --green-color: green;
+    --light-gray: lightgray;
+}
+

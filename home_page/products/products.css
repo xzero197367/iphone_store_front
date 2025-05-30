@@ -1,0 +1,85 @@
+
+
+.products_section{
+    width: 100%;
+    padding: 0 10vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #ededed;
+
+    figure{
+        display: flex;
+        flex-direction: row;
+        gap: 10;
+        justify-content: center;
+        align-items: center;
+
+        figcaption{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            h1{
+                font-size: 2rem;
+                font-weight: normal;
+
+                span{
+                    font-weight: bold;
+                }
+            }
+
+            p{
+                font-size: 1rem;
+                color: var(--text-color);
+            }
+
+            button{
+                padding: 1rem 2rem;
+                width: 10rem;
+                background-color: transparent;
+                color: var(--text-color);
+                font-weight: bold;
+                border: 1px solid var(--text-color);
+                border-radius: 10px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            button:hover{
+                background-color: var(--text-hover1);
+            }
+        }
+    }
+
+    .left{
+        display: flex;
+        flex-direction: column;
+
+        figure:first-child{
+            background-color: var(--primary-bg);
+        }
+
+        .subs{
+            figure:nth-child(1){
+                background-color: #ededed;
+            }
+
+            figure:nth-child(2){
+                background-color: var(--secondary-bg);
+                color: white;
+            }
+        }
+      
+
+        .subs{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+
+        }
+    }
+
+    
+}
