@@ -1,0 +1,19 @@
+
+
+.discount_section{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 10vw;
+
+    h1{
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .discounted_products{
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+    }
+}

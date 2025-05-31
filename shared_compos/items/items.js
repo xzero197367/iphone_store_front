@@ -80,5 +80,8 @@ function createItemsSection() {
 
 document.addEventListener('DOMContentLoaded', () => {
   const itemsSection = createItemsSection()
-  document.getElementById('items').appendChild(itemsSection)
+  const foundSection = document.getElementById('items')
+  if(foundSection){
+    foundSection.appendChild(itemsSection)
+  }
 })

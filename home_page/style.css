@@ -1,9 +1,12 @@
 @import url('./main/main.css');
-@import url('./nav/nav.css');
+@import url('../shared_compos/nav/nav.css');
 @import url('./products/products.css');
 @import url('./category/category.css');
-@import url('./items/items.css');
-
+@import url('../shared_compos/items/items.css');
+@import url('./main_items/main_items.css');
+@import url('./discount/discount.css');
+@import url('./footer_cover/footer_cover.css');
+@import url('../shared_compos/footer/footer.css');
 
 * {
     list-style: none;

@@ -1,0 +1,11 @@
+@import url('../shared_compos/nav/nav.css');
+@import url('../shared_compos/footer/footer.css');
+
+* {
+    list-style: none;
+    text-decoration: none;
+}
+
+.filler{
+    height: 80vh;
+}

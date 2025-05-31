@@ -1,0 +1,107 @@
+.items_section {
+    padding: 2rem 10vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .nav_menu {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+
+        color: var(--text-color);
+        transition: all 1s ease-in-out;
+
+        li:hover {
+            color: var(--text-hover1);
+            text-decoration: var(--text-hover1) underline;
+        }
+
+        &.active {
+            color: var(--text-hover1);
+        }
+    }
+
+    
+
+}
+
+.items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-between;
+    gap: 2rem;
+
+
+
+    li>figure {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        position: relative;
+        background-color: #ededed;
+        padding: 1rem;
+        border-radius: 1rem;
+
+
+        button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .favorite_btn {
+            width: 2rem;
+            height: 2rem;
+            margin-left: auto;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 20;
+
+            transition: all 1s ease-in-out;
+
+            i {
+                font-size: 1.5rem;
+                color: gray;
+                stroke: black;
+                stroke-width: 10px;
+                transition: all .3s ease-in-out;
+            }
+
+            i:hover {
+                color: red;
+                scale: 1.2;
+            }
+        }
+
+        .buy_btn {
+            background-color: black;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: all .3s ease-in-out;
+            width: 100%;
+            padding: 1rem 2rem;
+
+            &:hover {
+                background-color: darkgreen;
+                color: white;
+                font-weight: bold;
+            }
+        }
+
+
+        figcaption {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+}

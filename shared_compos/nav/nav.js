@@ -44,37 +44,37 @@ function createNav() {
         <ul>
           <li>
             <a href="./category_page/index.html">
-              <i class="fa-solid fa-mobile"></i>
+              <img src="../assets/category_white/phones.png" alt="">
               <span>Phones</span>
             </a>
           </li>
           <li>
             <a href="./category_page/index.html">
-              <i class="fa-solid fa-laptop"></i>
+              <img src="../assets/category_white/computer.png" alt="">
               <span>Computers</span>
             </a>
           </li>
           <li>
             <a href="./category_page/index.html">
-              <i class="fa-solid fa-watch"></i>
+              <img src="../assets/category_white/game.png" alt="">
               <span>Smart Watches</span>
             </a>
           </li>
           <li>
             <a href="./category_page/index.html">
-              <i class="fa-solid fa-camera"></i>
+              <img src="../assets/category_white/camera.png" alt="">
               <span>Cameras</span>
             </a>
           </li>
           <li>
             <a href="./category_page/index.html">
-              <i class="fa-solid fa-headphones"></i>
+              <img src="../assets/category_white/headphone.png" alt="">
               <span>Headphones</span>
             </a>
           </li>
           <li>
             <a href="./category_page/index.html">
-              <i class="fa-solid fa-gamepad"></i>
+              <img src="../assets/category_white/game.png" alt="">
               <span>Gaming</span>
             </a>
           </li>
