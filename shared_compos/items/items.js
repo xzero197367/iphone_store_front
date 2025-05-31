@@ -1,4 +1,4 @@
-const items = [
+export const items = [
   {
     name: 'iPhone 14 Pro Max 128GB Deep Blue',
     price: '$900',
@@ -41,7 +41,7 @@ const items = [
   },
 ]
 
-function createSingleItem(item) {
+export function createSingleItem(item) {
   const itemLi = document.createElement('li')
   itemLi.innerHTML = `<figure>
     <button class="favorite_btn">
@@ -57,7 +57,7 @@ function createSingleItem(item) {
   return itemLi
 }
 
-function createItems(items) {
+export function createItems(items) {
   const itemUl = document.createElement('ul')
   itemUl.innerHTML = `<ul class="items">
           ${items?.map((item) => createSingleItem(item).outerHTML).join('')}

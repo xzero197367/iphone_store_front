@@ -1,11 +1,28 @@
-@import url('../shared_compos/nav/nav.css');
-@import url('../shared_compos/footer/footer.css');
+@import url("../shared_compos/nav/nav.css");
+@import url("../shared_compos/footer/footer.css");
+@import url("../shared_compos/items/items.css");
+@import url("./filter/filter.css");
 
 * {
-    list-style: none;
-    text-decoration: none;
+  list-style: none;
+  text-decoration: none;
 }
 
-.filler{
-    height: 80vh;
+.filler {
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 1rem;
+
+  padding: 5rem 10vw;
+
+ 
+  .items {
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0;
+  }
+  .items_section{
+    margin: 0;
+    padding: 0;
+  }
 }

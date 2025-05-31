@@ -4,20 +4,20 @@ function createNav() {
        
     <nav>
       <section class="top">
-        <img src="../assets/logo.png" alt="" />
+        <img src="../assets/logo.png" alt="" onclick="window.location.href = '../../index.html'"/>
         <input type="text" placeholder="Search..." />
         <ul class="nav-links">
           <li>
-            <a href="./home_page/index.html">Home</a>
+            <a href="../../home_page/index.html">Home</a>
           </li>
           <li>
-            <a href="./about_page/index.html">About</a>
+            <a href="../../about_page/inde x.html">About</a>
           </li>
           <li>
-            <a href="./contact_page/index.html">Contact Us</a>
+            <a href="../../contact_page/index.html">Contact Us</a>
           </li>
           <li>
-            <a href="./services_page/index.html">Blog</a>
+            <a href="../../services_page/index.html">Blog</a>
           </li>
         </ul>
 
@@ -28,7 +28,7 @@ function createNav() {
             </a>
           </li>
           <li>
-            <a href="./signup_page/index.html">
+            <a href="../cart_page/index.html">
               <i class="fa-solid fa-cart-shopping"></i>
             </a>
           </li>
@@ -43,37 +43,37 @@ function createNav() {
         <!-- list of category (Phones, Computers, Smart watches, Cameras, Headphones, Gaming) (icon, name) -->
         <ul>
           <li>
-            <a href="./category_page/index.html">
+            <a href="../products_page/index.html">
               <img src="../assets/category_white/phones.png" alt="">
               <span>Phones</span>
             </a>
           </li>
           <li>
-            <a href="./category_page/index.html">
+            <a href="../products_page/index.html">
               <img src="../assets/category_white/computer.png" alt="">
               <span>Computers</span>
             </a>
           </li>
           <li>
-            <a href="./category_page/index.html">
+            <a href="../products_page/index.html">
               <img src="../assets/category_white/game.png" alt="">
               <span>Smart Watches</span>
             </a>
           </li>
           <li>
-            <a href="./category_page/index.html">
+            <a href="../products_page/index.html">
               <img src="../assets/category_white/camera.png" alt="">
               <span>Cameras</span>
             </a>
           </li>
           <li>
-            <a href="./category_page/index.html">
+            <a href="../products_page/index.html">
               <img src="../assets/category_white/headphone.png" alt="">
               <span>Headphones</span>
             </a>
           </li>
           <li>
-            <a href="./category_page/index.html">
+            <a href="../products_page/index.html">
               <img src="../assets/category_white/game.png" alt="">
               <span>Gaming</span>
             </a>

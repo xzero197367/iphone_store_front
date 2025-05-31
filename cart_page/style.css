@@ -1,5 +1,6 @@
 @import url('../shared_compos/nav/nav.css');
 @import url('../shared_compos/footer/footer.css');
+@import url('./cart_item/cart_item.css');
 
 * {
     list-style: none;
