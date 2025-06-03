@@ -1,5 +1,5 @@
 import { products } from "../../data/products.js";
-import { cartItems } from "../../data/cart.js";
+import { cartItems, onItemClicked } from "../../data/cart.js";
 
 console.log(cartItems);
 
@@ -8,6 +8,8 @@ window.addToCart = function (productId) {
   cartItems.push(productId);
   onRefreshProducts();
 };
+
+function getItemText(item) {}
 export function createSingleItem(item) {
   const itemLi = document.createElement("li");
 
@@ -20,7 +22,7 @@ export function createSingleItem(item) {
       <figcaption>
         <p>${item.name}</p>
         <h1>${item.price}</h1>
-        <button class="buy_btn">
+        <button type="button" class="buy_btn">
           ${cartItems.includes(item.id) ? "View Cart" : "Buy Now"}
         </button>
       </figcaption>
@@ -29,42 +31,44 @@ export function createSingleItem(item) {
 
   const buyBtn = itemLi.querySelector(".buy_btn");
 
-  if (cartItems.includes(item.id)) {
-    buyBtn.addEventListener("click", () => {
-      window.open("../cart_page/index.html");
-    });
-  } else {
-    buyBtn.addEventListener("click", () => {
-      alert("hi")
-      cartItems.push(item.id);
-      buyBtn.textContent = "View Cart";
-      buyBtn.onclick = () => window.open("../cart_page/index.html");
-    });
-  }
+  buyBtn.addEventListener("click", () => {
+    onItemClicked(item.id); // Call function normally
+  });
 
   return itemLi;
 }
 
 export function createItems(items) {
   const itemUl = document.createElement("ul");
-  itemUl.innerHTML = `<ul class="items">
-          ${items?.map((item) => createSingleItem(item).outerHTML).join("")}
-        </ul>`;
+  itemUl.className = "items";
+
+  items.forEach((item) => {
+    const itemElement = createSingleItem(item);
+    itemUl.appendChild(itemElement);
+  });
+
   return itemUl;
 }
-
 function createItemsSection() {
   const itemsSection = document.createElement("section");
-  itemsSection.innerHTML = `<section class="items_section">
-        <ul class="nav_menu">
-          <li>New Arrival</li>
-          <li>Best Seller</li>
-          <li>Featured Products</li>
-        </ul>
-        ${createItems(products).outerHTML}
-      </section>`;
+  itemsSection.className = "items_section";
+
+  const navMenu = document.createElement("ul");
+  navMenu.className = "nav_menu";
+  navMenu.innerHTML = `
+    <li>New Arrival</li>
+    <li>Best Seller</li>
+    <li>Featured Products</li>
+  `;
+
+  const itemsList = createItems(products); // real DOM element
+
+  itemsSection.appendChild(navMenu);
+  itemsSection.appendChild(itemsList);
+
   return itemsSection;
 }
+
 
 function onRefreshProducts() {
   const itemsSection = createItemsSection();
@@ -73,6 +77,7 @@ function onRefreshProducts() {
     foundSection.appendChild(itemsSection);
   }
 }
+
 document.addEventListener("DOMContentLoaded", () => {
   onRefreshProducts();
 });
