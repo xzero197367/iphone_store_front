@@ -1,15 +1,14 @@
-import { products } from "../../data/products.js";
-import { cartItems } from "../../data/cart.js";
-
-console.log(cartItems);
+import { products } from '../../data/products.js'
+import { getCart } from '../../data/cart.js'
 
 window.addToCart = function (productId) {
   // alert(productId)
-  cartItems.push(productId);
-  onRefreshProducts();
-};
+  cartItems.push(productId)
+  onRefreshProducts()
+}
 export function createSingleItem(item) {
-  const itemLi = document.createElement("li");
+  const itemLi = document.createElement('li')
+  const cartItems = getCart()
 
   itemLi.innerHTML = `
     <figure>
@@ -20,41 +19,26 @@ export function createSingleItem(item) {
       <figcaption>
         <p>${item.name}</p>
         <h1>${item.price}</h1>
-        <button class="buy_btn">
-          ${cartItems.includes(item.id) ? "View Cart" : "Buy Now"}
+
+        <button class="buy_btn" onclick="addToCart(${item.id})">
+             Buy Now
         </button>
       </figcaption>
     </figure>
-  `;
-
-  const buyBtn = itemLi.querySelector(".buy_btn");
-
-  if (cartItems.includes(item.id)) {
-    buyBtn.addEventListener("click", () => {
-      window.open("../cart_page/index.html");
-    });
-  } else {
-    buyBtn.addEventListener("click", () => {
-      alert("hi")
-      cartItems.push(item.id);
-      buyBtn.textContent = "View Cart";
-      buyBtn.onclick = () => window.open("../cart_page/index.html");
-    });
-  }
-
-  return itemLi;
+  `
+  return itemLi
 }
 
 export function createItems(items) {
-  const itemUl = document.createElement("ul");
+  const itemUl = document.createElement('ul')
   itemUl.innerHTML = `<ul class="items">
-          ${items?.map((item) => createSingleItem(item).outerHTML).join("")}
-        </ul>`;
-  return itemUl;
+          ${items?.map((item) => createSingleItem(item).outerHTML).join('')}
+        </ul>`
+  return itemUl
 }
 
 function createItemsSection() {
-  const itemsSection = document.createElement("section");
+  const itemsSection = document.createElement('section')
   itemsSection.innerHTML = `<section class="items_section">
         <ul class="nav_menu">
           <li>New Arrival</li>
@@ -62,17 +46,17 @@ function createItemsSection() {
           <li>Featured Products</li>
         </ul>
         ${createItems(products).outerHTML}
-      </section>`;
-  return itemsSection;
+      </section>`
+  return itemsSection
 }
 
 function onRefreshProducts() {
-  const itemsSection = createItemsSection();
-  const foundSection = document.getElementById("items");
+  const itemsSection = createItemsSection()
+  const foundSection = document.getElementById('items')
   if (foundSection) {
-    foundSection.appendChild(itemsSection);
+    foundSection.appendChild(itemsSection)
   }
 }
-document.addEventListener("DOMContentLoaded", () => {
-  onRefreshProducts();
-});
+document.addEventListener('DOMContentLoaded', () => {
+  onRefreshProducts()
+})
