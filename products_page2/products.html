@@ -1,635 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>iPhone Products - Cyber</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 30px;
-        }
-
-        /* Sidebar Styles */
-        .sidebar {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            height: fit-content;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .filter-section {
-            margin-bottom: 30px;
-        }
-
-        .filter-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            cursor: pointer;
-        }
-
-        .filter-title {
-            font-size: 16px;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .filter-arrow {
-            font-size: 12px;
-            color: #666;
-            transition: transform 0.3s ease;
-        }
-
-        .filter-arrow.expanded {
-            transform: rotate(180deg);
-        }
-
-        .filter-content {
-            display: block;
-        }
-
-        .filter-content.collapsed {
-            display: none;
-        }
-
-        /* Price Range */
-        .price-inputs {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-
-        .price-input {
-            flex: 1;
-            padding: 8px 12px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 14px;
-        }
-
-        .price-range {
-            width: 100%;
-            margin: 10px 0;
-        }
-
-        /* Brand Filter */
-        .brand-list {
-            max-height: 200px;
-            overflow-y: auto;
-        }
-
-        .brand-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
-            cursor: pointer;
-        }
-
-        .brand-checkbox {
-            width: 16px;
-            height: 16px;
-            cursor: pointer;
-        }
-
-        .brand-label {
-            font-size: 14px;
-            color: #333;
-            cursor: pointer;
-        }
-
-        /* Memory Filter */
-        .memory-search {
-            width: 100%;
-            padding: 8px 12px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            margin-bottom: 15px;
-            font-size: 14px;
-        }
-
-        .memory-list {
-            max-height: 150px;
-            overflow-y: auto;
-        }
-
-        .memory-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 8px;
-            cursor: pointer;
-        }
-
-        /* Main Content */
-        .main-content {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .content-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-        }
-
-        .selected-products {
-            font-size: 14px;
-            color: #666;
-        }
-
-        .sort-select {
-            padding: 8px 12px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 14px;
-            background: white;
-        }
-
-        /* Products Grid */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
-        }
-
-        .product-card {
-            border: 1px solid #eee;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-            position: relative;
-            background: white;
-        }
-
-        .product-card:hover {
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            transform: translateY(-2px);
-        }
-
-        .favorite-btn {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: none;
-            border: none;
-            font-size: 20px;
-            cursor: pointer;
-            color: #ccc;
-            transition: color 0.3s ease;
-        }
-
-        .favorite-btn:hover,
-        .favorite-btn.active {
-            color: #ff4757;
-        }
-
-        .product-image {
-            width: 100%;
-            height: 200px;
-            object-fit: contain;
-            margin-bottom: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 60px;
-        }
-
-        .product-name {
-            font-size: 14px;
-            color: #333;
-            margin-bottom: 10px;
-            font-weight: 500;
-        }
-
-        .product-price {
-            font-size: 18px;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 15px;
-        }
-
-        .buy-btn {
-            width: 100%;
-            background: #333;
-            color: white;
-            border: none;
-            padding: 12px;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .buy-btn:hover {
-            background: #555;
-        }
-
-        /* Pagination */
-        .pagination {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 40px;
-        }
-
-        .page-btn {
-            padding: 8px 12px;
-            border: 1px solid #ddd;
-            background: white;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-
-        .page-btn:hover,
-        .page-btn.active {
-            background: #333;
-            color: white;
-            border-color: #333;
-        }
-
-        .page-btn.dots {
-            cursor: default;
-            border: none;
-            background: none;
-        }
-
-        .page-btn.dots:hover {
-            background: none;
-            color: #333;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .products-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-                gap: 20px;
-            }
-        }
-
-        .no-results {
-            text-align: center;
-            padding: 60px 20px;
-            color: #666;
-        }
-
-        .no-results-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-            opacity: 0.5;
-        }
-    </style>
-</head>
-<body>
+    <link rel="stylesheet" href="./product.css" />
+  </head>
+  <body>
     <div class="container">
-        <!-- Sidebar Filters -->
-        <aside class="sidebar">
-            <!-- Price Filter -->
-            <div class="filter-section">
-                <div class="filter-header" onclick="toggleFilter('price')">
-                    <span class="filter-title">Price</span>
-                    <span class="filter-arrow" id="price-arrow">▼</span>
-                </div>
-                <div class="filter-content" id="price-content">
-                    <div class="price-inputs">
-                        <input type="number" class="price-input" id="minPrice" placeholder="From" value="500">
-                        <input type="number" class="price-input" id="maxPrice" placeholder="To" value="2000">
-                    </div>
-                    <input type="range" class="price-range" id="priceRange" min="0" max="3000" value="1500">
-                </div>
+      <!-- Sidebar Filters -->
+      <aside class="sidebar">
+        <!-- Price Filter -->
+        <div class="filter-section">
+          <div class="filter-header" onclick="toggleFilter('price')">
+            <span class="filter-title">Price</span>
+            <span class="filter-arrow" id="price-arrow">▼</span>
+          </div>
+          <div class="filter-content" id="price-content">
+            <div class="price-inputs">
+              <input
+                type="number"
+                class="price-input"
+                id="minPrice"
+                placeholder="From"
+                value="500"
+              />
+              <input
+                type="number"
+                class="price-input"
+                id="maxPrice"
+                placeholder="To"
+                value="2000"
+              />
             </div>
+            <input
+              type="range"
+              class="price-range"
+              id="priceRange"
+              min="0"
+              max="3000"
+              value="1500"
+            />
+          </div>
+        </div>
 
-            <!-- Brand Filter -->
-            <div class="filter-section">
-                <div class="filter-header" onclick="toggleFilter('brand')">
-                    <span class="filter-title">Brand</span>
-                    <span class="filter-arrow" id="brand-arrow">▼</span>
-                </div>
-                <div class="filter-content" id="brand-content">
-                    <div class="brand-list">
-                        <div class="brand-item">
-                            <input type="checkbox" class="brand-checkbox" id="apple" value="Apple" checked>
-                            <label class="brand-label" for="apple">Apple</label>
-                        </div>
-                        <div class="brand-item">
-                            <input type="checkbox" class="brand-checkbox" id="samsung" value="Samsung">
-                            <label class="brand-label" for="samsung">Samsung</label>
-                        </div>
-                        <div class="brand-item">
-                            <input type="checkbox" class="brand-checkbox" id="xiaomi" value="Xiaomi">
-                            <label class="brand-label" for="xiaomi">Xiaomi</label>
-                        </div>
-                        <div class="brand-item">
-                            <input type="checkbox" class="brand-checkbox" id="poco" value="POCO">
-                            <label class="brand-label" for="poco">POCO</label>
-                        </div>
-                        <div class="brand-item">
-                            <input type="checkbox" class="brand-checkbox" id="oneplus" value="OnePlus">
-                            <label class="brand-label" for="oneplus">OnePlus</label>
-                        </div>
-                        <div class="brand-item">
-                            <input type="checkbox" class="brand-checkbox" id="motorola" value="Motorola">
-                            <label class="brand-label" for="motorola">Motorola</label>
-                        </div>
-                        <div class="brand-item">
-                            <input type="checkbox" class="brand-checkbox" id="nokia" value="Nokia">
-                            <label class="brand-label" for="nokia">Nokia</label>
-                        </div>
-                        <div class="brand-item">
-                            <input type="checkbox" class="brand-checkbox" id="realme" value="Realme">
-                            <label class="brand-label" for="realme">Realme</label>
-                        </div>
-                    </div>
-                </div>
+        <!-- Brand Filter -->
+        <div class="filter-section">
+          <div class="filter-header" onclick="toggleFilter('brand')">
+            <span class="filter-title">Brand</span>
+            <span class="filter-arrow" id="brand-arrow">▼</span>
+          </div>
+          <div class="filter-content" id="brand-content">
+            <div class="brand-list">
+              <div class="brand-item">
+                <input
+                  type="checkbox"
+                  class="brand-checkbox"
+                  id="apple"
+                  value="Apple"
+                  checked
+                />
+                <label class="brand-label" for="apple">Apple</label>
+              </div>
+              <div class="brand-item">
+                <input
+                  type="checkbox"
+                  class="brand-checkbox"
+                  id="samsung"
+                  value="Samsung"
+                />
+                <label class="brand-label" for="samsung">Samsung</label>
+              </div>
+              <div class="brand-item">
+                <input
+                  type="checkbox"
+                  class="brand-checkbox"
+                  id="xiaomi"
+                  value="Xiaomi"
+                />
+                <label class="brand-label" for="xiaomi">Xiaomi</label>
+              </div>
+              <div class="brand-item">
+                <input
+                  type="checkbox"
+                  class="brand-checkbox"
+                  id="poco"
+                  value="POCO"
+                />
+                <label class="brand-label" for="poco">POCO</label>
+              </div>
+              <div class="brand-item">
+                <input
+                  type="checkbox"
+                  class="brand-checkbox"
+                  id="oneplus"
+                  value="OnePlus"
+                />
+                <label class="brand-label" for="oneplus">OnePlus</label>
+              </div>
+              <div class="brand-item">
+                <input
+                  type="checkbox"
+                  class="brand-checkbox"
+                  id="motorola"
+                  value="Motorola"
+                />
+                <label class="brand-label" for="motorola">Motorola</label>
+              </div>
+              <div class="brand-item">
+                <input
+                  type="checkbox"
+                  class="brand-checkbox"
+                  id="nokia"
+                  value="Nokia"
+                />
+                <label class="brand-label" for="nokia">Nokia</label>
+              </div>
+              <div class="brand-item">
+                <input
+                  type="checkbox"
+                  class="brand-checkbox"
+                  id="realme"
+                  value="Realme"
+                />
+                <label class="brand-label" for="realme">Realme</label>
+              </div>
             </div>
+          </div>
+        </div>
+      </aside>
 
-            <!-- Memory Filter -->
-            <div class="filter-section">
-                <div class="filter-header" onclick="toggleFilter('memory')">
-                    <span class="filter-title">Built-in memory</span>
-                    <span class="filter-arrow" id="memory-arrow">▼</span>
-                </div>
-                <div class="filter-content" id="memory-content">
-                    <input type="text" class="memory-search" placeholder="Search" id="memorySearch">
-                    <div class="memory-list" id="memoryList">
-                        <div class="memory-item">
-                            <input type="checkbox" class="brand-checkbox" id="mem16" value="16GB">
-                            <label class="brand-label" for="mem16">16GB</label>
-                        </div>
-                        <div class="memory-item">
-                            <input type="checkbox" class="brand-checkbox" id="mem32" value="32GB">
-                            <label class="brand-label" for="mem32">32GB</label>
-                        </div>
-                        <div class="memory-item">
-                            <input type="checkbox" class="brand-checkbox" id="mem64" value="64GB">
-                            <label class="brand-label" for="mem64">64GB</label>
-                        </div>
-                        <div class="memory-item">
-                            <input type="checkbox" class="brand-checkbox" id="mem128" value="128GB" checked>
-                            <label class="brand-label" for="mem128">128GB</label>
-                        </div>
-                        <div class="memory-item">
-                            <input type="checkbox" class="brand-checkbox" id="mem256" value="256GB" checked>
-                            <label class="brand-label" for="mem256">256GB</label>
-                        </div>
-                        <div class="memory-item">
-                            <input type="checkbox" class="brand-checkbox" id="mem512" value="512GB">
-                            <label class="brand-label" for="mem512">512GB</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="content-header">
+          <span class="selected-products"
+            >Selected Products: <span id="productCount">85</span></span
+          >
+          <select class="sort-select" id="sortSelect">
+            <option value="rating">By rating</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="name">By name</option>
+          </select>
+        </div>
 
-            <!-- Additional Filters -->
-            <div class="filter-section">
-                <div class="filter-header" onclick="toggleFilter('protection')">
-                    <span class="filter-title">Protection class</span>
-                    <span class="filter-arrow" id="protection-arrow">▼</span>
-                </div>
-                <div class="filter-content collapsed" id="protection-content">
-                    <select class="sort-select" style="width: 100%;">
-                        <option>IP67</option>
-                        <option>IP68</option>
-                        <option>None</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="filter-section">
-                <div class="filter-header" onclick="toggleFilter('screen')">
-                    <span class="filter-title">Screen diagonal</span>
-                    <span class="filter-arrow" id="screen-arrow">▼</span>
-                </div>
-                <div class="filter-content collapsed" id="screen-content">
-                    <select class="sort-select" style="width: 100%;">
-                        <option>6.1"</option>
-                        <option>6.7"</option>
-                        <option>5.4"</option>
-                    </select>
-                </div>
-            </div>
-        </aside>
-
-        <!-- Main Content -->
-        <main class="main-content">
-            <div class="content-header">
-                <span class="selected-products">Selected Products: <span id="productCount">85</span></span>
-                <select class="sort-select" id="sortSelect">
-                    <option value="rating">By rating</option>
-                    <option value="price-low">Price: Low to High</option>
-                    <option value="price-high">Price: High to Low</option>
-                    <option value="name">By name</option>
-                </select>
-            </div>
-
-            <div class="products-grid" id="productsGrid">
-                <!-- Products will be dynamically inserted here -->
-            </div>
-
-            <div class="pagination">
-                <button class="page-btn active">1</button>
-                <button class="page-btn">2</button>
-                <button class="page-btn">3</button>
-                <button class="page-btn dots">...</button>
-                <button class="page-btn">12</button>
-            </div>
-        </main>
+        <div class="products-grid" id="productsGrid">
+          <!-- Products will be dynamically inserted here -->
+        </div>
+      </main>
     </div>
 
-    <script>
-        // Sample product data
-        const products = [
-            { id: 1, name: "Apple iPhone 14 Pro 512GB Gold (MQ233)", price: 1437, brand: "Apple", memory: "512GB", rating: 4.8, image: "📱" },
-            { id: 2, name: "Apple iPhone 11 128GB White (MQ233)", price: 510, brand: "Apple", memory: "128GB", rating: 4.5, image: "📱" },
-            { id: 3, name: "Apple iPhone 11 128GB White (MQ233)", price: 550, brand: "Apple", memory: "128GB", rating: 4.5, image: "📱" },
-            { id: 4, name: "Apple iPhone 14 Pro 1TB Gold (MQ233)", price: 1499, brand: "Apple", memory: "1TB", rating: 4.9, image: "📱" },
-            { id: 5, name: "Apple iPhone 14 Pro 1TB Gold (MQ233)", price: 1399, brand: "Apple", memory: "1TB", rating: 4.9, image: "📱" },
-            { id: 6, name: "Apple iPhone 14 Pro 128GB Deep Purple (MQ233)", price: 1600, brand: "Apple", memory: "128GB", rating: 4.7, image: "📱" },
-            { id: 7, name: "Apple iPhone 13 mini 128GB Pink (MQ233)", price: 850, brand: "Apple", memory: "128GB", rating: 4.4, image: "📱" },
-            { id: 8, name: "Apple iPhone 13 Pro 256GB Space Black (MQ233)", price: 1399, brand: "Apple", memory: "256GB", rating: 4.8, image: "📱" },
-            { id: 9, name: "Apple iPhone 14 Pro 256GB Silver (MQ233)", price: 1399, brand: "Apple", memory: "256GB", rating: 4.8, image: "📱" },
-            { id: 10, name: "Samsung Galaxy S23 Ultra 256GB", price: 1200, brand: "Samsung", memory: "256GB", rating: 4.6, image: "📱" },
-            { id: 11, name: "Samsung Galaxy S23 128GB", price: 800, brand: "Samsung", memory: "128GB", rating: 4.5, image: "📱" },
-            { id: 12, name: "Xiaomi 13 Pro 256GB", price: 900, brand: "Xiaomi", memory: "256GB", rating: 4.4, image: "📱" },
-            { id: 13, name: "OnePlus 11 256GB", price: 750, brand: "OnePlus", memory: "256GB", rating: 4.3, image: "📱" },
-            { id: 14, name: "POCO F5 Pro 256GB", price: 450, brand: "POCO", memory: "256GB", rating: 4.2, image: "📱" },
-            { id: 15, name: "Motorola Edge 40 Pro 256GB", price: 650, brand: "Motorola", memory: "256GB", rating: 4.1, image: "📱" }
-        ];
-
-        let filteredProducts = [...products];
-        let favorites = new Set();
-
-        // Initialize page
-        document.addEventListener('DOMContentLoaded', function() {
-            renderProducts();
-            setupEventListeners();
-        });
-
-        function setupEventListeners() {
-            // Price filter
-            document.getElementById('minPrice').addEventListener('input', applyFilters);
-            document.getElementById('maxPrice').addEventListener('input', applyFilters);
-            document.getElementById('priceRange').addEventListener('input', updatePriceRange);
-
-            // Brand filter
-            document.querySelectorAll('.brand-checkbox').forEach(checkbox => {
-                checkbox.addEventListener('change', applyFilters);
-            });
-
-            // Sort
-            document.getElementById('sortSelect').addEventListener('change', applySort);
-
-            // Memory search
-            document.getElementById('memorySearch').addEventListener('input', filterMemoryOptions);
-        }
-
-        function toggleFilter(filterId) {
-            const content = document.getElementById(filterId + '-content');
-            const arrow = document.getElementById(filterId + '-arrow');
-            
-            content.classList.toggle('collapsed');
-            arrow.classList.toggle('expanded');
-        }
-
-        function updatePriceRange() {
-            const range = document.getElementById('priceRange');
-            const maxPrice = document.getElementById('maxPrice');
-            maxPrice.value = range.value;
-            applyFilters();
-        }
-
-        function applyFilters() {
-            const minPrice = parseInt(document.getElementById('minPrice').value) || 0;
-            const maxPrice = parseInt(document.getElementById('maxPrice').value) || 10000;
-            
-            const selectedBrands = Array.from(document.querySelectorAll('.brand-checkbox:checked'))
-                .map(cb => cb.value);
-            
-            const selectedMemory = Array.from(document.querySelectorAll('#memoryList .brand-checkbox:checked'))
-                .map(cb => cb.value);
-
-            filteredProducts = products.filter(product => {
-                const priceMatch = product.price >= minPrice && product.price <= maxPrice;
-                const brandMatch = selectedBrands.length === 0 || selectedBrands.includes(product.brand);
-                const memoryMatch = selectedMemory.length === 0 || selectedMemory.includes(product.memory);
-                
-                return priceMatch && brandMatch && memoryMatch;
-            });
-
-            applySort();
-        }
-
-        function applySort() {
-            const sortValue = document.getElementById('sortSelect').value;
-            
-            switch(sortValue) {
-                case 'price-low':
-                    filteredProducts.sort((a, b) => a.price - b.price);
-                    break;
-                case 'price-high':
-                    filteredProducts.sort((a, b) => b.price - a.price);
-                    break;
-                case 'name':
-                    filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
-                    break;
-                case 'rating':
-                default:
-                    filteredProducts.sort((a, b) => b.rating - a.rating);
-                    break;
-            }
-            
-            renderProducts();
-        }
-
-        function renderProducts() {
-            const grid = document.getElementById('productsGrid');
-            const productCount = document.getElementById('productCount');
-            
-            productCount.textContent = filteredProducts.length;
-
-            if (filteredProducts.length === 0) {
-                grid.innerHTML = `
-                    <div class="no-results" style="grid-column: 1 / -1;">
-                        <div class="no-results-icon">📱</div>
-                        <h3>No products found</h3>
-                        <p>Try adjusting your filters to see more results</p>
-                    </div>
-                `;
-                return;
-            }
-
-            grid.innerHTML = filteredProducts.map(product => `
-                <div class="product-card">
-                    <button class="favorite-btn ${favorites.has(product.id) ? 'active' : ''}" 
-                            onclick="toggleFavorite(${product.id})">♡</button>
-                    <div class="product-image">${product.image}</div>
-                    <div class="product-name">${product.name}</div>
-                    <div class="product-price">$${product.price}</div>
-                    <button class="buy-btn" onclick="buyProduct(${product.id})">Buy Now</button>
-                </div>
-            `).join('');
-        }
-
-        function toggleFavorite(productId) {
-            if (favorites.has(productId)) {
-                favorites.delete(productId);
-            } else {
-                favorites.add(productId);
-            }
-            renderProducts();
-        }
-
-        function buyProduct(productId) {
-            const product = products.find(p => p.id === productId);
-            alert(`Added ${product.name} to cart!`);
-        }
-
-        function filterMemoryOptions() {
-            const searchTerm = document.getElementById('memorySearch').value.toLowerCase();
-            const memoryItems = document.querySelectorAll('.memory-item');
-            
-            memoryItems.forEach(item => {
-                const label = item.querySelector('.brand-label').textContent.toLowerCase();
-                item.style.display = label.includes(searchTerm) ? 'flex' : 'none';
-            });
-        }
-
-        // Initialize filters
-        applyFilters();
-    </script>
-</body>
+    <script type="module" src="product.js"></script>
+  </body>
 </html>

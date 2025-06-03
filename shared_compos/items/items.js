@@ -1,14 +1,13 @@
+import { products } from '../../data/products.js'
+import { cartItems, onItemClicked } from '../../data/cart.js'
 
-import { products } from "../../data/products.js";
-import { cartItems, onItemClicked } from "../../data/cart.js";
-
-console.log(cartItems);
+console.log(cartItems)
 
 window.addToCart = function (productId) {
   // alert(productId)
-  cartItems.push(productId);
-  onRefreshProducts();
-};
+  cartItems.push(productId)
+  onRefreshProducts()
+}
 
 function getItemText(item) {}
 
@@ -26,52 +25,51 @@ export function createSingleItem(item) {
         <p>${item.name}</p>
         <h1>${item.price}</h1>
         <button type="button" class="buy_btn">
-          ${cartItems.includes(item.id) ? "View Cart" : "Buy Now"}
+          ${cartItems.includes(item.id) ? 'View Cart' : 'Buy Now'}
         </button>
       </figcaption>
     </figure>
-  `;
+  `
 
-  const buyBtn = itemLi.querySelector(".buy_btn");
+  const buyBtn = itemLi.querySelector('.buy_btn')
 
-  buyBtn.addEventListener("click", () => {
-    onItemClicked(item.id); // Call function normally
-  });
+  buyBtn.addEventListener('click', () => {
+    onItemClicked(item.id) // Call function normally
+  })
 
-  return itemLi;
+  return itemLi
 }
 
 export function createItems(items) {
-  const itemUl = document.createElement("ul");
-  itemUl.className = "items";
+  const itemUl = document.createElement('ul')
+  itemUl.className = 'items'
 
   items.forEach((item) => {
-    const itemElement = createSingleItem(item);
-    itemUl.appendChild(itemElement);
-  });
+    const itemElement = createSingleItem(item)
+    itemUl.appendChild(itemElement)
+  })
 
-  return itemUl;
+  return itemUl
 }
 function createItemsSection() {
-  const itemsSection = document.createElement("section");
-  itemsSection.className = "items_section";
+  const itemsSection = document.createElement('section')
+  itemsSection.className = 'items_section'
 
-  const navMenu = document.createElement("ul");
-  navMenu.className = "nav_menu";
+  const navMenu = document.createElement('ul')
+  navMenu.className = 'nav_menu'
   navMenu.innerHTML = `
     <li>New Arrival</li>
     <li>Best Seller</li>
     <li>Featured Products</li>
-  `;
+  `
 
-  const itemsList = createItems(products); // real DOM element
+  const itemsList = createItems(products) // real DOM element
 
-  itemsSection.appendChild(navMenu);
-  itemsSection.appendChild(itemsList);
+  itemsSection.appendChild(navMenu)
+  itemsSection.appendChild(itemsList)
 
-  return itemsSection;
+  return itemsSection
 }
-
 
 function onRefreshProducts() {
   const itemsSection = createItemsSection()
@@ -81,6 +79,6 @@ function onRefreshProducts() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  onRefreshProducts();
-});
+document.addEventListener('DOMContentLoaded', () => {
+  onRefreshProducts()
+})

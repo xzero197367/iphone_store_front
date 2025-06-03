@@ -36,6 +36,7 @@ body {
   grid-template-columns: 1fr 350px;
   gap: 30px;
   align-items: start;
+  margin-top: 50px;
 }
 
 .cart-items {

@@ -1,7 +1,10 @@
 @import url('../../assets/init_styles.css');
 @import url('../../assets/colors.css');
 
-
+* {
+    list-style: none;
+    text-decoration: none;
+}
 
 nav {
     position: fixed;
@@ -45,23 +48,27 @@ nav {
             font-weight: bold;
             transition: color 0.3s ease;
 
-            a{
+            a {
                 text-align: center;
                 color: var(--text-color);
             }
-            a:hover{
+
+            a:hover {
                 color: var(--text-hover1)
             }
         }
-        .nav-icons{
-            i{
+
+        .nav-icons {
+            i {
                 color: var(--text-color);
             }
-            i:hover{
+
+            i:hover {
                 color: var(--text-hover1)
             }
         }
-        input[type="text"]{
+
+        input[type="text"] {
             border-radius: 10px;
             padding: 10px 20px;
             border: none;
@@ -84,7 +91,7 @@ nav {
 
         li {
             /* border-right: 1px solid var(--gray-color); */
-            padding:  0 20px 0 0;
+            padding: 0 20px 0 0;
             flex-grow: 1;
             text-align: center;
             display: flex;
@@ -94,17 +101,19 @@ nav {
             transition: background-color 0.3s ease;
             cursor: pointer;
 
-            &:hover{
+            &:hover {
                 background-color: #4b4a4a;
-                span{
+
+                span {
                     color: white;
                 }
-                img{
+
+                img {
                     filter: brightness(0) invert(1);
                 }
             }
 
-            a{
+            a {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
@@ -112,11 +121,11 @@ nav {
                 gap: 10px;
             }
 
-            span{
+            span {
                 text-align: center;
                 color: var(--text-color);
             }
-    
+
             /* img{
                 color: var(--text-color);
             }
@@ -131,14 +140,15 @@ nav {
             } */
         }
 
-        li::after{
+        li::after {
             content: "";
             width: 1px;
             height: 10px;
             background-color: var(--gray-color);
             margin: 0 20px;
         }
-        li:last-child::after{
+
+        li:last-child::after {
             display: none;
         }
     }

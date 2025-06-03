@@ -1,4 +1,3 @@
-
 function getCart() {
   return JSON.parse(localStorage.getItem('cart')) || []
 }
@@ -16,6 +15,7 @@ function addToCart(product) {
     cart.push({ ...product, quantity: 1 })
   }
   saveCart(cart)
+  return index
 }
 
 function displayCart() {

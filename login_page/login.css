@@ -16,6 +16,7 @@ body {
 }
 
 .container {
+  margin-top: 100px;
   background: white;
   border-radius: 20px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
@@ -26,7 +27,7 @@ body {
 }
 
 .form-container {
-  padding: 40px;
+  padding: 20px;
 }
 
 .form-title {
@@ -67,15 +68,21 @@ body {
 .btn {
   width: 100%;
   padding: 14px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+  background-color: #333;
   color: white;
   border: none;
   border-radius: 10px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: all 0.2s ease;
   margin-bottom: 20px;
+
+  &:hover {
+    background-color: #545454;
+    color: white;
+  }
 }
 
 .btn:hover {
