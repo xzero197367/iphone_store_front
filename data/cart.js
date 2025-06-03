@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-export let cartItems = [
-    
-]
 
-export function onItemClicked(item) {
-  console.log({ item });
-}
-=======
 function getCart() {
   return JSON.parse(localStorage.getItem('cart')) || []
 }
@@ -51,4 +43,3 @@ function removeFromCart(id) {
 }
 
 export { addToCart, displayCart, updateCartItem, removeFromCart, getCart }
->>>>>>> b52595d63d0a8c750f4f88140dc27c1d39cdb013

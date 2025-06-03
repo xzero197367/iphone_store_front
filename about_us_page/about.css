@@ -1,0 +1,388 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header Styles */
+.header {
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 15px 0;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+}
+
+.search-container {
+  flex: 1;
+  max-width: 400px;
+  margin: 0 40px;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 20px 12px 45px;
+  border: 1px solid #e0e0e0;
+  border-radius: 25px;
+  background: #f8f9fa;
+  font-size: 14px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin-right: 30px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: #8b5cf6;
+}
+
+.header-icons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  color: #8b5cf6;
+}
+
+/* Category Navigation */
+.category-nav {
+  background: #2d1b69;
+  padding: 15px 0;
+}
+
+.category-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.category-item:hover {
+  opacity: 0.8;
+}
+
+.category-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Main Content */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #2d1b69;
+  margin-bottom: 20px;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Content Sections */
+.content-section {
+  margin-bottom: 80px;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.section-content h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #2d1b69;
+  margin-bottom: 20px;
+}
+
+.section-content p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.section-image {
+  /* background: linear-gradient(135deg, #8b5cf6, #2d1b69); */
+  background: #333;
+  border-radius: 20px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  color: white;
+}
+
+/* Stats Section */
+.stats-section {
+  background: white;
+  border-radius: 20px;
+  padding: 60px;
+  margin: 80px 0;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+
+.stat-item h3 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #8b5cf6;
+  margin-bottom: 10px;
+}
+
+.stat-item p {
+  font-size: 16px;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Team Section */
+.team-section {
+  text-align: center;
+}
+
+.team-section h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #2d1b69;
+  margin-bottom: 50px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.team-member {
+  background: white;
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+}
+
+.member-avatar {
+  width: 100px;
+  height: 100px;
+  /* background: linear-gradient(135deg, #8b5cf6, #2d1b69); */
+  background: #333;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  color: white;
+  font-weight: 700;
+}
+
+.member-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2d1b69;
+  margin-bottom: 5px;
+}
+
+.member-role {
+  font-size: 14px;
+  color: #8b5cf6;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.member-bio {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Values Section */
+.values-section {
+  /* background: #2d1b69; */
+   background: #333;
+  border-radius: 20px;
+  padding: 80px 60px;
+  margin: 80px 0;
+  color: white;
+  text-align: center;
+}
+
+.values-section h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.value-item {
+  text-align: center;
+}
+
+.value-icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(139, 92, 246, 0.2);
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+}
+
+.value-item h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.value-item p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .search-container {
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .nav-menu {
+    margin-right: 0;
+  }
+
+  .category-container {
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .section-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-section,
+  .values-section {
+    padding: 40px 30px;
+  }
+}
