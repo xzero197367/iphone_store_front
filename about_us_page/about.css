@@ -12,21 +12,6 @@ body {
   line-height: 1.6;
 }
 
-/* Header Styles */
-.header {
-  background: white;
-  border-bottom: 1px solid #e0e0e0;
-  padding: 15px 0;
-}
-
-.header-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 
 .logo {
   font-size: 24px;
@@ -133,7 +118,7 @@ body {
 /* Main Content */
 .main-content {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 50px auto 0 auto;
   padding: 60px 20px;
 }
 

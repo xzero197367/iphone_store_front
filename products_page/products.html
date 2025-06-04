@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing</title>
+    <link rel="stylesheet" href="./pgg.css"> 
+
+</head>
+
+
+<body>
+      <div id="nav"></div>
+    <div class="container">
+
+      
+        <!-- Filters Sidebar -->
+        <div class="filters-sidebar">
+            <!-- Price Filter -->
+            <div class="filter-section">
+                <div class="filter-header">
+                    <span class="filter-title">Price</span>
+                    <button class="filter-toggle" onclick="toggleFilter(this)">▼</button>
+                </div>
+                <div class="filter-content">
+                    <!-- <div class="price-inputs">
+                        <label for="priceFrom">From</label>
+                        <input type="number" class="price-input" placeholder="From" value="1299" id="priceFrom">
+                         <label for="priceTo">To</label>
+                        <input type="number" class="price-input" placeholder="To" value="1299" id="priceTo">
+                    </div> -->
+                    <div class="price-inputs">
+                        <div class="price-group">
+                            <label for="priceFrom">From</label>
+                            <input type="number" class="price-input" value="1299" id="priceFrom">
+                        </div>
+                        <div class="price-group">
+                            <label for="priceTo">To</label>
+                            <input type="number" class="price-input" value="1299" id="priceTo">
+                        </div>
+                    </div>
+
+
+                    <div class="price-slider">
+                        <div class="price-range-fill" id="priceRangeFill"></div>
+                        <input type="range" min="0" max="2000" value="500" id="priceMin">
+                        <input type="range" min="0" max="2000" value="1500" id="priceMax">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Brand Filter -->
+            <div class="filter-section">
+                <div class="filter-header">
+                    <span class="filter-title">Brand</span>
+                    <button class="filter-toggle" onclick="toggleFilter(this)">▼</button>
+                </div>
+                <div class="filter-content">
+                    <input type="text" class="search-input" placeholder="Search" onkeyup="filterBrands(this.value)">
+                    <div class="brand-list" id="brandList">
+                        <div class="brand-item">
+                            <input type="checkbox" class="brand-checkbox" id="apple" checked>
+                            <label for="apple" class="brand-name">Apple</label>
+                            <span class="brand-count">10</span>
+                        </div>
+                        <div class="brand-item">
+                            <input type="checkbox" class="brand-checkbox" id="samsung">
+                            <label for="samsung" class="brand-name">Samsung</label>
+                            <span class="brand-count">23</span>
+                        </div>
+                        <div class="brand-item">
+                            <input type="checkbox" class="brand-checkbox" id="xiaomi">
+                            <label for="xiaomi" class="brand-name">Xiaomi</label>
+                            <span class="brand-count">15</span>
+                        </div>
+                        <div class="brand-item">
+                            <input type="checkbox" class="brand-checkbox" id="poco">
+                            <label for="poco" class="brand-name">Poco</label>
+                            <span class="brand-count">34</span>
+                        </div>
+                        <div class="brand-item">
+                            <input type="checkbox" class="brand-checkbox" id="oppo">
+                            <label for="oppo" class="brand-name">OPPO</label>
+                            <span class="brand-count">26</span>
+                        </div>
+                        <div class="brand-item">
+                            <input type="checkbox" class="brand-checkbox" id="honor">
+                            <label for="honor" class="brand-name">Honor</label>
+                            <span class="brand-count">10</span>
+                        </div>
+                        <div class="brand-item">
+                            <input type="checkbox" class="brand-checkbox" id="motorola">
+                            <label for="motorola" class="brand-name">Motorola</label>
+                            <span class="brand-count">54</span>
+                        </div>
+                        <div class="brand-item">
+                            <input type="checkbox" class="brand-checkbox" id="nokia">
+                            <label for="nokia" class="brand-name">Nokia</label>
+                            <span class="brand-count">22</span>
+                        </div>
+                        <div class="brand-item">
+                            <input type="checkbox" class="brand-checkbox" id="realme">
+                            <label for="realme" class="brand-name">Realme</label>
+                            <span class="brand-count">35</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Built-in Memory Filter -->
+            <div class="filter-section">
+                <div class="filter-header">
+                    <span class="filter-title">Built-in memory</span>
+                    <button class="filter-toggle" onclick="toggleFilter(this)">▼</button>
+                </div>
+                <div class="filter-content">
+                    <input type="text" class="search-input" placeholder="Search">
+                    <div class="memory-list">
+                        <div class="memory-item">
+                            <input type="checkbox" class="brand-checkbox" id="16gb">
+                            <label for="16gb" class="brand-name">16GB</label>
+                            <span class="brand-count">68</span>
+                        </div>
+                        <div class="memory-item">
+                            <input type="checkbox" class="brand-checkbox" id="32gb">
+                            <label for="32gb" class="brand-name">32GB</label>
+                            <span class="brand-count">123</span>
+                        </div>
+                        <div class="memory-item">
+                            <input type="checkbox" class="brand-checkbox" id="64gb">
+                            <label for="64gb" class="brand-name">64GB</label>
+                            <span class="brand-count">48</span>
+                        </div>
+                        <div class="memory-item">
+                            <input type="checkbox" class="brand-checkbox" id="128gb">
+                            <label for="128gb" class="brand-name">128GB</label>
+                            <span class="brand-count">84</span>
+                        </div>
+                        <div class="memory-item">
+                            <input type="checkbox" class="brand-checkbox" id="256gb">
+                            <label for="256gb" class="brand-name">256GB</label>
+                            <span class="brand-count">71</span>
+                        </div>
+                        <div class="memory-item">
+                            <input type="checkbox" class="brand-checkbox" id="512gb">
+                            <label for="512gb" class="brand-name">512GB</label>
+                            <span class="brand-count">8</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Protection Class Filter -->
+            <div class="filter-section">
+                <div class="filter-header">
+                    <span class="filter-title">Protection class</span>
+                    <button class="filter-toggle" onclick="toggleFilter(this)">▼</button>
+                </div>
+                <div class="filter-content">
+                    <div class="memory-list">
+                        <div class="memory-item">
+                            <input type="checkbox" class="brand-checkbox" id="ip54">
+                            <label for="ip54" class="brand-name">IP54</label>
+                            <span class="brand-count">12</span>
+                        </div>
+                        <div class="memory-item">
+                            <input type="checkbox" class="brand-checkbox" id="ip67">
+                            <label for="ip67" class="brand-name">IP67</label>
+                            <span class="brand-count">35</span>
+                        </div>
+                        <div class="memory-item">
+                            <input type="checkbox" class="brand-checkbox" id="ip68">
+                            <label for="ip68" class="brand-name">IP68</label>
+                            <span class="brand-count">28</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Screen Diagonal Filter -->
+            <div class="filter-section">
+                <div class="filter-header">
+                    <span class="filter-title">Screen diagonal</span>
+                    <button class="filter-toggle" onclick="toggleFilter(this)">▼</button>
+                </div>
+                <div class="filter-content">
+                    <div class="memory-list">
+                        <div class="memory-item">
+                            <input type="checkbox" class="brand-checkbox" id="5inch">
+                            <label for="5inch" class="brand-name">5.0"</label>
+                            <span class="brand-count">8</span>
+                        </div>
+                        <div class="memory-item">
+                            <input type="checkbox" class="brand-checkbox" id="55inch">
+                            <label for="55inch" class="brand-name">5.5"</label>
+                            <span class="brand-count">15</span>
+                        </div>
+                        <div class="memory-item">
+                            <input type="checkbox" class="brand-checkbox" id="6inch">
+                            <label for="6inch" class="brand-name">6.0"</label>
+                            <span class="brand-count">42</span>
+                        </div>
+                        <div class="memory-item">
+                            <input type="checkbox" class="brand-checkbox" id="61inch">
+                            <label for="61inch" class="brand-name">6.1"</label>
+                            <span class="brand-count">28</span>
+                        </div>
+                        <div class="memory-item">
+                            <input type="checkbox" class="brand-checkbox" id="67inch">
+                            <label for="67inch" class="brand-name">6.7"</label>
+                            <span class="brand-count">31</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Screen Type Filter -->
+            <div class="filter-section">
+                <div class="filter-header">
+                    <span class="filter-title">Screen type</span>
+                    <button class="filter-toggle" onclick="toggleFilter(this)">▼</button>
+                </div>
+                <div class="filter-content">
+                    <div class="memory-list">
+                        <div class="memory-item">
+                            <input type="checkbox" class="brand-checkbox" id="lcd">
+                            <label for="lcd" class="brand-name">LCD</label>
+                            <span class="brand-count">45</span>
+                        </div>
+                        <div class="memory-item">
+                            <input type="checkbox" class="brand-checkbox" id="oled">
+                            <label for="oled" class="brand-name">OLED</label>
+                            <span class="brand-count">38</span>
+                        </div>
+                        <div class="memory-item">
+                            <input type="checkbox" class="brand-checkbox" id="amoled">
+                            <label for="amoled" class="brand-name">AMOLED</label>
+                            <span class="brand-count">52</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Battery Capacity Filter -->
+            <div class="filter-section">
+                <div class="filter-header">
+                    <span class="filter-title">Battery capacity</span>
+                    <button class="filter-toggle" onclick="toggleFilter(this)">▼</button>
+                </div>
+                <div class="filter-content">
+                    <div class="memory-list">
+                        <div class="memory-item">
+                            <input type="checkbox" class="brand-checkbox" id="3000mah">
+                            <label for="3000mah" class="brand-name">3000-3999 mAh</label>
+                            <span class="brand-count">24</span>
+                        </div>
+                        <div class="memory-item">
+                            <input type="checkbox" class="brand-checkbox" id="4000mah">
+                            <label for="4000mah" class="brand-name">4000-4999 mAh</label>
+                            <span class="brand-count">67</span>
+                        </div>
+                        <div class="memory-item">
+                            <input type="checkbox" class="brand-checkbox" id="5000mah">
+                            <label for="5000mah" class="brand-name">5000+ mAh</label>
+                            <span class="brand-count">18</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+
+            <div class="content-header">
+                <span class="selected-count">Selected Products: <strong>85</strong></span>
+                <!-- <select class="sort-dropdown">
+                    <option value="" selected disabled>Sort by</option>
+                    <option>Price: Low to High</option>
+                    <option>Price: High to Low</option>
+                    
+                </select> -->
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be dynamically generated -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button onclick="changePage('prev')" id="prevBtn">‹</button>
+                <button class="active" onclick="changePage(1)">1</button>
+                <button onclick="changePage(2)">2</button>
+                <button onclick="changePage(3)">3</button>
+                <span>...</span>
+                <button onclick="changePage(12)">12</button>
+                <button onclick="changePage('next')" id="nextBtn">›</button>
+            </div>
+        </div>
+
+
+
+    </div>
+    <div id="footer"></div>
+
+
+
+   <script src="./v2.js"></script>
+   <script src="../shared_compos/nav/nav.js"></script>
+   <script src="../shared_compos/footer/footer.js"></script>
+
+</body>
+</html>

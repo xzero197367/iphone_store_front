@@ -21,29 +21,18 @@ function createNav() {
             <a href="../../about_us_page/about.html">About</a>
           </li>
           <li>
-            <a href="../../contact_page/index.html">Contact Us</a>
-          </li>
-          <li>
-            <a href="../../services_page/index.html">Blog</a>
+            <a href="../../contact_us_page/contact.html">Contact Us</a>
           </li>
         </ul>
 
         <ul class="nav-icons">
-          <li>
-            <a href="./login_page/index.html">
-              <i class="fa-solid fa-heart"></i>
-            </a>
-          </li>
+          
           <li>
             <a href="../cart_page2/cart.html">
               <i class="fa-solid fa-cart-shopping"></i>
             </a>
           </li>
-          <li>
-            <a href="./profile_page/index.html"
-              ><i class="fa-solid fa-user"></i
-            ></a>
-          </li>
+         
            <li>
             <a href="../login_page/index.html"
               ><i class="fa-solid fa-right-to-bracket"></i
@@ -55,37 +44,37 @@ function createNav() {
         <!-- list of category (Phones, Computers, Smart watches, Cameras, Headphones, Gaming) (icon, name) -->
         <ul>
           <li>
-            <a href="../products_page2/products.html">
+            <a href="../products_page/products.html">
               <img src="../assets/category_white/phones.png" alt="">
               <span>Phones</span>
             </a>
           </li>
           <li>
-            <a href="../products_page2/products.html">
+            <a href="../products_page/products.html">
               <img src="../assets/category_white/computer.png" alt="">
               <span>Computers</span>
             </a>
           </li>
           <li>
-            <a href="../products_page2/products.html">
+            <a href="../products_page/products.html">
               <img src="../assets/category_white/game.png" alt="">
               <span>Smart Watches</span>
             </a>
           </li>
           <li>
-            <a href="../products_page2/products.html">
+            <a href="../products_page/products.html">
               <img src="../assets/category_white/camera.png" alt="">
               <span>Cameras</span>
             </a>
           </li>
           <li>
-            <a href="../products_page2/products.html">
+            <a href="../products_page/products.html">
               <img src="../assets/category_white/headphone.png" alt="">
               <span>Headphones</span>
             </a>
           </li>
           <li>
-            <a href="../products_page2/products.html">
+            <a href="../products_page/products.html">
               <img src="../assets/category_white/game.png" alt="">
               <span>Gaming</span>
             </a>

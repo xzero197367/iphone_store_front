@@ -1,19 +1,11 @@
 import { products } from '../../data/products.js'
-import { cartItems, onItemClicked } from '../../data/cart.js'
 
-console.log(cartItems)
 
-window.addToCart = function (productId) {
-  // alert(productId)
-  cartItems.push(productId)
-  onRefreshProducts()
-}
 
 function getItemText(item) {}
 
 export function createSingleItem(item) {
   const itemLi = document.createElement('li')
-  const cartItems = getCart()
 
   itemLi.innerHTML = `
     <figure>
@@ -24,18 +16,13 @@ export function createSingleItem(item) {
       <figcaption>
         <p>${item.name}</p>
         <h1>${item.price}</h1>
-        <button type="button" class="buy_btn">
-          ${cartItems.includes(item.id) ? 'View Cart' : 'Buy Now'}
+        <button type="button" class="buy_btn" onclick="window.open('../product_page/product.html', '_blank')">
+          ${ 'Buy Now'}
         </button>
       </figcaption>
     </figure>
   `
 
-  const buyBtn = itemLi.querySelector('.buy_btn')
-
-  buyBtn.addEventListener('click', () => {
-    onItemClicked(item.id) // Call function normally
-  })
 
   return itemLi
 }

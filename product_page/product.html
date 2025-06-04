@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple iPhone 14 Pro Max - Product Details</title>
+    <style>
+        
+    </style>
+
+    <link rel="stylesheet" href="./product.css">
+</head>
+<body>
+    <div id="nav"></div>
+
+    <!-- Product Section -->
+    <section id="product" class="product-section">
+        <div class="container">
+            <div class="product-container">
+                <div class="product-images">
+                    <div class="thumbnail-list">
+                        <img src="../assets/products/iphone.png" alt="iPhone 14 Pro Max" class="thumbnail active" onclick="changeMainImage(this.src)">
+                        <img src="../assets/products/iphone.png" alt="iPhone side view" class="thumbnail" onclick="changeMainImage(this.src)">
+                        <img src="../assets/products/iphone.png" alt="iPhone back view" class="thumbnail" onclick="changeMainImage(this.src)">
+                        <img src="../assets/products/iphone.png" alt="iPhone accessories" class="thumbnail" onclick="changeMainImage(this.src)">
+                    </div>
+                    <img id="mainImage" src="../assets/products/iphone.png" alt="Apple iPhone 14 Pro Max" class="main-image">
+                </div>
+
+                <div class="product-info">
+                    <h1>Apple iPhone 14 Pro Max</h1>
+                    <div class="price">$1,099.00</div>
+
+                    <div class="option-group">
+                        <label class="option-label">Color</label>
+                        <div class="color-options">
+                            <div class="color-option color-purple active" onclick="selectColor(this)" data-color="Deep Purple"></div>
+                            <div class="color-option color-gold" onclick="selectColor(this)" data-color="Gold"></div>
+                            <div class="color-option color-silver" onclick="selectColor(this)" data-color="Silver"></div>
+                            <div class="color-option color-black" onclick="selectColor(this)" data-color="Space Black"></div>
+                        </div>
+                    </div>
+
+                    <div class="option-group">
+                        <label class="option-label">Storage</label>
+                        <div class="storage-options">
+                            <div class="storage-option" onclick="selectStorage(this)" data-storage="128GB" data-price="1099">128GB</div>
+                            <div class="storage-option active" onclick="selectStorage(this)" data-storage="256GB" data-price="1199">256GB</div>
+                            <div class="storage-option" onclick="selectStorage(this)" data-storage="512GB" data-price="1399">512GB</div>
+                            <div class="storage-option" onclick="selectStorage(this)" data-storage="1TB" data-price="1599">1TB</div>
+                        </div>
+                    </div>
+
+                    <div class="quantity-selector">
+                        <label class="option-label">Quantity</label>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="changeQuantity(-1)">-</button>
+                            <input type="number" id="quantity" class="quantity-input" value="1" min="1" max="10">
+                            <button class="quantity-btn" onclick="changeQuantity(1)">+</button>
+                        </div>
+                    </div>
+
+                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specifications -->
+    <section id="specifications" class="specifications">
+        <div class="container">
+            <h2>Technical Specifications</h2>
+            <table class="spec-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Specification</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Display</td>
+                        <td>6.7-inch Super Retina XDR display</td>
+                    </tr>
+                    <tr>
+                        <td>Chip</td>
+                        <td>A16 Bionic chip</td>
+                    </tr>
+                    <tr>
+                        <td>Camera System</td>
+                        <td>Pro camera system (48MP Main, 12MP Ultra Wide, 12MP Telephoto)</td>
+                    </tr>
+                    <tr>
+                        <td>Video Recording</td>
+                        <td>4K video recording at 24 fps, 25 fps, 30 fps, or 60 fps</td>
+                    </tr>
+                    <tr>
+                        <td>Battery Life</td>
+                        <td>Up to 29 hours video playback</td>
+                    </tr>
+                    <tr>
+                        <td>Storage Options</td>
+                        <td>128GB, 256GB, 512GB, 1TB</td>
+                    </tr>
+                    <tr>
+                        <td>Operating System</td>
+                        <td>iOS 16</td>
+                    </tr>
+                    <tr>
+                        <td>Connectivity</td>
+                        <td>5G, Wi-Fi 6, Bluetooth 5.3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2>Customer Reviews</h2>
+            
+            <div class="rating-summary">
+                <div class="rating-number">4.8</div>
+                <div>
+                    <div class="stars">★★★★★</div>
+                    <div>Based on 1,234 reviews</div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="reviewer-name">Sarah M.</span>
+                    <span class="review-date">December 15, 2023</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p>Amazing phone! The camera quality is outstanding and the battery life is incredible. Definitely worth the upgrade from my iPhone 12.</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="reviewer-name">Mike R.</span>
+                    <span class="review-date">December 10, 2023</span>
+                </div>
+                <div class="review-stars">★★★★☆</div>
+                <p>Great performance and build quality. The Dynamic Island is a nice touch. Only complaint is the price, but you get what you pay for.</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="reviewer-name">Jennifer L.</span>
+                    <span class="review-date">December 8, 2023</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p>Love everything about this phone. The Pro camera system is perfect for my photography hobby. Highly recommended!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="related-products">
+        <div class="container">
+            <h2>Related Products</h2>
+            <div class="related-grid">
+                <div class="related-card">
+                    <img src="../assets/products/iphone.png" alt="iPhone 14">
+                    <h3>iPhone 14</h3>
+                    <div class="related-price">$799.00</div>
+                </div>
+                <div class="related-card">
+                    <img src="../assets/products/iphone.png" alt="iPhone 14 Plus">
+                    <h3>iPhone 14 Plus</h3>
+                    <div class="related-price">$899.00</div>
+                </div>
+                <div class="related-card">
+                    <img src="../assets/products/iphone.png" alt="iPhone 14 Pro">
+                    <h3>iPhone 14 Pro</h3>
+                    <div class="related-price">$999.00</div>
+                </div>
+                <div class="related-card">
+                    <img src="../assets/products/iphone.png" alt="AirPods Pro">
+                    <h3>AirPods Pro</h3>
+                    <div class="related-price">$249.00</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script src="product.js"></script>
+    <script src="../shared_compos/nav/nav.js"></script>
+    <script src="../shared_compos/footer/footer.js"></script>
+</body>
+</html>

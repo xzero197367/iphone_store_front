@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Apple Store</title>
+    <link rel="stylesheet" href="./contact.css">
+</head>
+<body>
+    <div id="nav"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>We're here to help. Reach out to our team with any questions, feedback, or support needs.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <div class="success-message" id="successMessage">
+                        Thank you for your message! We'll get back to you shortly.
+                    </div>
+                    <h2>Send Us a Message</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                            <div class="error-message" id="nameError">Please enter your name</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required>
+                            <div class="error-message" id="emailError">Please enter a valid email address</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number (optional)</label>
+                            <input type="tel" id="phone" class="form-control">
+                            <div class="error-message" id="phoneError">Please enter a valid phone number</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" class="form-control" required>
+                                <option value="">Select a subject</option>
+                                <option value="product">Product Inquiry</option>
+                                <option value="order">Order Status</option>
+                                <option value="return">Returns & Refunds</option>
+                                <option value="technical">Technical Support</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <div class="error-message" id="subjectError">Please select a subject</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                            <div class="error-message" id="messageError">Please enter your message</div>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <h2>Other Ways to Connect</h2>
+                    <div class="info-card">
+                        <h3>📞 Call Us</h3>
+                        <p>Customer Service:</p>
+                        <p><a href="tel:1-800-275-2273">1-800-MY-APPLE (1-800-275-2273)</a></p>
+                        <p>Technical Support:</p>
+                        <p><a href="tel:1-800-275-2273">1-800-APL-CARE (1-800-275-2273)</a></p>
+                        <p>Hours: 8:00 AM - 8:00 PM, Monday to Friday</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>✉️ Email Us</h3>
+                        <p>General Inquiries:</p>
+                        <p><a href="mailto:contact@applestore.com">contact@applestore.com</a></p>
+                        <p>Support:</p>
+                        <p><a href="mailto:support@applestore.com">support@applestore.com</a></p>
+                        <p>Business Inquiries:</p>
+                        <p><a href="mailto:business@applestore.com">business@applestore.com</a></p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🌐 Follow Us</h3>
+                        <p>Stay connected with us on social media for the latest updates, promotions, and news.</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link">f</a>
+                            <a href="#" class="social-link">t</a>
+                            <a href="#" class="social-link">in</a>
+                            <a href="#" class="social-link">ig</a>
+                            <a href="#" class="social-link">yt</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Store Locations -->
+    <section class="store-locations">
+        <div class="container">
+            <h2>Visit Our Stores</h2>
+            <div class="locations-grid">
+                <div class="location-card">
+                    <div class="map-container">
+                        <img src="https://th.bing.com/th/id/R.8b3467edd6310b9ba3dd60201bd45dcb?rik=xKXFCmPRZE3hTw&pid=ImgRaw&r=0" alt="Map of New York Store" class="map-placeholder">
+                    </div>
+                    <div class="location-info">
+                        <h3>Apple Fifth Avenue</h3>
+                        <p>767 Fifth Avenue</p>
+                        <p>New York, NY 10153</p>
+                        <p><a href="tel:2123361440">212-336-1440</a></p>
+                        <div class="hours">
+                            <strong>Store Hours:</strong>
+                            <p>Monday - Saturday: 10:00 AM - 8:00 PM</p>
+                            <p>Sunday: 11:00 AM - 7:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="location-card">
+                    <div class="map-container">
+                        <img src="https://www.area-arch.it/wp-content/uploads/sites/6/2022/10/apple-store_f1-1024x576.jpg" alt="Map of San Francisco Store" class="map-placeholder">
+                    </div>
+                    <div class="location-info">
+                        <h3>Apple Union Square</h3>
+                        <p>300 Post Street</p>
+                        <p>San Francisco, CA 94108</p>
+                        <p><a href="tel:4153928200">415-392-8200</a></p>
+                        <div class="hours">
+                            <strong>Store Hours:</strong>
+                            <p>Monday - Saturday: 10:00 AM - 8:00 PM</p>
+                            <p>Sunday: 11:00 AM - 7:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="location-card">
+                    <div class="map-container">
+                        <img src="https://th.bing.com/th/id/R.f0cbad3fe948afb5eddce7d4920eea43?rik=hjK3kgyGTFctYg&pid=ImgRaw&r=0" alt="Map of Chicago Store" class="map-placeholder">
+                    </div>
+                    <div class="location-info">
+                        <h3>Apple Michigan Avenue</h3>
+                        <p>401 N Michigan Avenue</p>
+                        <p>Chicago, IL 60611</p>
+                        <p><a href="tel:3127295920">312-729-5920</a></p>
+                        <div class="hours">
+                            <strong>Store Hours:</strong>
+                            <p>Monday - Saturday: 10:00 AM - 8:00 PM</p>
+                            <p>Sunday: 11:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        How can I track my order?
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>You can track your order by visiting the "Order Status" page on our website and entering your order number and email address. Alternatively, you can click on the tracking link in your order confirmation email or contact our customer service team for assistance.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        What is your return policy?
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>We offer a 14-day return policy for most products. Items must be returned in their original packaging with all accessories included. Some products may have different return policies, so please check the product page or contact customer service for specific details.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        How can I get technical support for my Apple product?
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>For technical support, you can visit the Apple Support website, call our technical support line at 1-800-APL-CARE, or schedule an appointment at your nearest Apple Store Genius Bar. We also offer online chat support and community forums where you can find solutions to common issues.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        Do you offer international shipping?
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Yes, we offer international shipping to many countries. Shipping rates and delivery times vary by location. Please note that international orders may be subject to import duties and taxes, which are the responsibility of the recipient.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        How can I apply for Apple Card?
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>You can apply for Apple Card directly from your iPhone. Open the Wallet app, tap the plus button, and select Apple Card. Follow the on-screen instructions to complete your application. Apple Card is currently only available to U.S. residents who are 18 years or older.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+    <script src="./contact.js">
+    </script>
+    <script src="../shared_compos/nav/nav.js"></script>
+    <script src="../shared_compos/footer/footer.js"></script>
+</body>
+</html>

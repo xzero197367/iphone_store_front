@@ -2,6 +2,10 @@
 
 function createFooter(){
     const footer = document.createElement("section");
+    const style = document.createElement('link')
+    style.rel = 'stylesheet'
+    style.href = '../shared_compos/footer/footer.css'
+    document.head.appendChild(style)
     footer.classList.add("footer_section");
     footer.innerHTML = `
 

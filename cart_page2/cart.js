@@ -1,34 +1,8 @@
-// Sample product data
+import { products } from '../data/products.js'
 const sampleProducts = [
-  {
-    id: 1,
-    name: "Wireless Headphones",
-    price: 99.99,
-    image: "🎧",
-    description: "High-quality wireless headphones with noise cancellation",
-  },
-  {
-    id: 2,
-    name: "Smart Watch",
-    price: 249.99,
-    image: "⌚",
-    description: "Fitness tracking smartwatch with heart rate monitor",
-  },
-  {
-    id: 3,
-    name: "Laptop Stand",
-    price: 39.99,
-    image: "💻",
-    description: "Adjustable aluminum laptop stand for better ergonomics",
-  },
-  {
-    id: 4,
-    name: "Coffee Mug",
-    price: 14.99,
-    image: "☕",
-    description: "Insulated travel coffee mug with leak-proof lid",
-  },
-];
+
+...products,
+]
 
 // Cart state
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -84,7 +58,7 @@ function renderCart() {
     .map(
       (item) => `
                 <div class="cart-item" data-id="${item.id}">
-                    <div class="item-image">${item.image}</div>
+                    <img src="${item.image}" alt="${item.name}" class="item-image">
                     <div class="item-details">
                         <h3>${item.name}</h3>
                         <p>${item.description}</p>
@@ -101,9 +75,7 @@ function renderCart() {
                         }" min="1" max="99" onchange="updateQuantity(${
         item.id
       }, this.value)">
-                        <button class="quantity-btn" onclick="updateQuantity(${
-                          item.id
-                        }, ${item.quantity + 1})">+</button>
+                        <button class="quantity-plus-btn" >+</button>
                     </div>
                     <button class="remove-btn" onclick="removeItem(${
                       item.id
@@ -112,6 +84,12 @@ function renderCart() {
             `
     )
     .join("");
+
+  // Update quantity input values
+  const quantityInputs = document.getElementsByClassName("quantity-plus-input");
+  for (let i = 0; i < quantityInputs.length; i++) {
+    quantityInputs[i].value = cart[i].quantity;
+  }
 }
 
 function updateQuantity(id, newQuantity) {
